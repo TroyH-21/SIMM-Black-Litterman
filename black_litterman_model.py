@@ -70,8 +70,12 @@ def benchmark_variance(market_series, covariance_matrix):
     #Pandas handles the alignment for you here
     return market_series.T @ covariance_matrix @ market_series
 
-def lambda_risk_aversion(benchmark_variance):
-    E_RM = 0.08
+#Calculation to find lambda
+def lambda_risk_aversion(benchmark_variance, benchmark):
+    E_RM = 0;
+    if benchmark == "90/10": E_RM = 0.09
+    elif benchmark == "80/20": E_RM = 0.085
+    else: E_RM = 0.0725
     RF = 0.0421
     
     return (E_RM-RF)/benchmark_variance

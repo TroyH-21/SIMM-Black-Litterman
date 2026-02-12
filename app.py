@@ -131,7 +131,7 @@ with st.spinner('📡 Connecting to Market Data...'):
 
     #Calculate Market Baseline
     var = blm.benchmark_variance(weights, cov_matrix)
-    lam = blm.lambda_risk_aversion(var)
+    lam = blm.lambda_risk_aversion(var, str(baseline_option))
     pi = blm.implied_returns(lam, cov_matrix, weights)
 
 #Main content page of webpage
