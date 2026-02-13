@@ -274,3 +274,40 @@ if st.button("🚀 Run Optimization Model", type="primary", use_container_width=
             , height=500
         )   
         
+# --- 4. BENCHMARK REFERENCE TABLE ---
+st.markdown("---")
+st.subheader("4. Benchmark Reference Guide")
+st.caption("Comparison of target weights across all available strategies.")
+
+# 1. Define the Weights Data (Hardcoded from your module for display)
+reference_data = {
+    "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
+    "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+    "90/10 (Aggressive)": [0.20, 0.10, 0.10, 0.10, 0.10, 0.05, 0.10, 0.10, 0.15],
+    "80/20 (Growth)":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13],
+    "60/40 (Balanced)":   [0.14, 0.06, 0.06, 0.07, 0.07, 0.03, 0.07, 0.40, 0.10],
+    "SIMM Benchmark":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
+}
+
+# 2. Create DataFrame
+ref_df = pd.DataFrame(reference_data)
+
+# 3. Styling Logic
+def highlight_max(s):
+    is_max = s == s.max()
+    return ['background-color: rgba(46, 160, 67, 0.2)' if v else '' for v in is_max]
+
+st.dataframe(
+    ref_df.style
+    .format({
+        "90/10 (Aggressive)": "{:.1%}",
+        "80/20 (Growth)": "{:.1%}",
+        "60/40 (Balanced)": "{:.1%}",
+        "SIMM Benchmark": "{:.1%}"
+    })
+    .apply(highlight_max, subset=["90/10 (Aggressive)", "80/20 (Growth)", "60/40 (Balanced)"], axis=1) # Highlights the strategy with the highest weight for that sector
+    .background_gradient(subset=["90/10 (Aggressive)", "80/20 (Growth)", "60/40 (Balanced)"], cmap="Greens", vmin=0, vmax=0.4),
+    use_container_width=True,
+    hide_index=True,
+    height=400
+)
