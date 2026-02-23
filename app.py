@@ -84,7 +84,7 @@ RISK_FREE_RATE = 0.0421 # 4.21%
 SECTOR_MAP = {
     'XLK': 'Technology', 'XLP': 'Cons. Staples', 'XLB': 'Materials',
     'XLF': 'Financials', 'XLV': 'Healthcare', 'XLU': 'Utilities',
-    'XLI': 'Industrials', 'AGG': 'Fixed Income', 'AOR': 'Mixed'
+    'XLI': 'Industrials', 'AGG': 'Fixed Income'
 }
 #Sets the time window to gather price history, and it is dynamic based on the day you run this program
 @st.cache_data(ttl=3600)

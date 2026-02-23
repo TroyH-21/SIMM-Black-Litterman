@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-sectors = ['AGG', 'AOR', 'XLB', 'XLF', 'XLI', 'XLK', 'XLP', 'XLU', 'XLV']
+sectors = ['AGG', 'XLB', 'XLF', 'XLI', 'XLK', 'XLP', 'XLU', 'XLV']
 
 #Calculates all the log returns
 #Notes:
@@ -25,8 +25,8 @@ def eighty_twenty(cov_matrix):
     import pandas as pd
     #Define weights with explicit Ticker labels
     weights_dict = {
-        'XLK': 0.18, 'XLP': 0.09, 'XLB': 0.09, 'XLF': 0.09, 
-        'XLV': 0.09, 'XLU': 0.04, 'XLI': 0.09, 'AGG': 0.20, 'AOR': 0.13
+        'XLK': 0.21, 'XLP': 0.11, 'XLB': 0.11, 'XLF': 0.11, 
+        'XLV': 0.11, 'XLU': 0.04, 'XLI': 0.11, 'AGG': 0.20
     }
     #Create a Series and reindex it to match the Covariance Matrix exactly
     w_series = pd.Series(weights_dict).reindex(cov_matrix.index)
@@ -36,8 +36,8 @@ def sixty_fourty(cov_matrix):
     import pandas as pd
     #Define weights with explicit Ticker labels
     weights_dict = {
-        'XLK': 0.14, 'XLP': 0.06, 'XLB': 0.06, 'XLF': 0.07, 
-        'XLV': 0.07, 'XLU': 0.03, 'XLI': 0.07, 'AGG': 0.40, 'AOR': 0.10
+        'XLK': 0.17, 'XLP': 0.09, 'XLB': 0.08, 'XLF': 0.08, 
+        'XLV': 0.08, 'XLU': 0.04, 'XLI': 0.09, 'AGG': 0.40
     }
     #Create a Series and reindex it to match the Covariance Matrix exactly
     w_series = pd.Series(weights_dict).reindex(cov_matrix.index)
@@ -47,8 +47,8 @@ def ninety_ten(cov_matrix):
     import pandas as pd
     #Define weights with explicit Ticker labels
     weights_dict = {
-        'XLK': 0.20, 'XLP': 0.10, 'XLB': 0.10, 'XLF': 0.10, 
-        'XLV': 0.10, 'XLU': 0.05, 'XLI': 0.10, 'AGG': 0.10, 'AOR': 0.15
+        'XLK': 0.24, 'XLP': 0.12, 'XLB': 0.12, 'XLF': 0.12, 
+        'XLV': 0.12, 'XLU': 0.06, 'XLI': 0.12, 'AGG': 0.10
     }
     #Create a Series and reindex it to match the Covariance Matrix exactly
     w_series = pd.Series(weights_dict).reindex(cov_matrix.index)
@@ -59,8 +59,8 @@ def simm_bench(cov_matrix):
     import pandas as pd
     #Define weights with explicit Ticker labels
     weights_dict = {
-        'XLK': 0.18, 'XLP': 0.09, 'XLB': 0.09, 'XLF': 0.09, 
-        'XLV': 0.09, 'XLU': 0.04, 'XLI': 0.09, 'AGG': 0.20, 'AOR': 0.13
+        'XLK': 0.21, 'XLP': 0.11, 'XLB': 0.11, 'XLF': 0.11, 
+        'XLV': 0.11, 'XLU': 0.04, 'XLI': 0.11, 'AGG': 0.20
     }
     #Create a Series and reindex it to match the Covariance Matrix exactly
     w_series = pd.Series(weights_dict).reindex(cov_matrix.index)
