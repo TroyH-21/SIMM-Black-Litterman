@@ -141,3 +141,4 @@ def mu_bl(cov_matrix, P_matrix, Q_matrix, omega, implied_returns):
     
     mu_bl = term1 @ term2
     return mu_bl
+
