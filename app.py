@@ -280,14 +280,30 @@ st.subheader("4. Benchmark Reference Guide")
 st.caption("Comparison of target weights across all available strategies.")
 
 # 1. Define the Weights Data (Hardcoded from your module for display)
-reference_data = {
-    "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
-    "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
-    "90/10 (Aggressive)": [0.20, 0.10, 0.10, 0.10, 0.10, 0.05, 0.10, 0.10, 0.15],
-    "80/20 (Growth)":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13],
-    "60/40 (Balanced)":   [0.14, 0.06, 0.06, 0.07, 0.07, 0.03, 0.07, 0.40, 0.10],
-    "SIMM Benchmark":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
-}
+if baseline_option == "90/10": 
+    reference_data = {
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+        "90/10 (Aggressive)": [0.20, 0.10, 0.10, 0.10, 0.10, 0.05, 0.10, 0.10, 0.15]
+    }
+elif baseline_option == "80/20": 
+    reference_data = {
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+        "80/20 (Growth)":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
+    }
+elif baseline_option == "60/40": 
+    reference_data = {
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+        "60/40 (Balanced)":   [0.14, 0.06, 0.06, 0.07, 0.07, 0.03, 0.07, 0.40, 0.10]
+    }
+else: 
+    reference_data = {
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+        "SIMM Benchmark":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
+    }
 
 # 2. Create DataFrame
 ref_df = pd.DataFrame(reference_data)
@@ -305,9 +321,4 @@ st.dataframe(
         "60/40 (Balanced)": "{:.1%}",
         "SIMM Benchmark": "{:.1%}"
     })
-    .apply(highlight_max, subset=["90/10 (Aggressive)", "80/20 (Growth)", "60/40 (Balanced)"], axis=1) # Highlights the strategy with the highest weight for that sector
-    .background_gradient(subset=["90/10 (Aggressive)", "80/20 (Growth)", "60/40 (Balanced)"], cmap="Greens", vmin=0, vmax=0.4),
-    use_container_width=True,
-    hide_index=True,
-    height=400
 )
