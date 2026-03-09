@@ -282,27 +282,27 @@ st.caption("Comparison of target weights across all available strategies.")
 # 1. Define the Weights Data (Hardcoded from your module for display)
 if baseline_option == "90/10": 
     reference_data = {
-        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
-        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income'],
         "90/10 (Aggressive)": [0.20, 0.10, 0.10, 0.10, 0.10, 0.05, 0.10, 0.10, 0.15]
     }
 elif baseline_option == "80/20": 
     reference_data = {
-        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
-        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
-        "80/20 (Growth)":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income'],
+        "80/20 (Growth)":     [0.21, 0.11, 0.11, 0.11, 0.11, 0.04, 0.11, 0.20]
     }
 elif baseline_option == "60/40": 
     reference_data = {
-        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
-        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
-        "60/40 (Balanced)":   [0.14, 0.06, 0.06, 0.07, 0.07, 0.03, 0.07, 0.40, 0.10]
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income'],
+        "60/40 (Balanced)":   [0.17, 0.09, 0.08, 0.08, 0.08, 0.04, 0.09, 0.40]
     }
 else: 
     reference_data = {
-        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG', 'AOR'],
-        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income', 'Mixed'],
-        "SIMM Benchmark":     [0.18, 0.09, 0.09, 0.09, 0.09, 0.04, 0.09, 0.20, 0.13]
+        "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG'],
+        "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income'],
+        "SIMM Benchmark":     [0.24, 0.12, 0.12, 0.12, 0.12, 0.06, 0.12, 0.10]
     }
 
 # 2. Create DataFrame
