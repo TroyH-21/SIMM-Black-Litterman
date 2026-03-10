@@ -284,7 +284,7 @@ if baseline_option == "90/10":
     reference_data = {
         "Ticker": ['XLK', 'XLP', 'XLB', 'XLF', 'XLV', 'XLU', 'XLI', 'AGG'],
         "Sector": ['Technology', 'Cons. Staples', 'Materials', 'Financials', 'Healthcare', 'Utilities', 'Industrials', 'Fixed Income'],
-        "90/10 (Aggressive)": [0.20, 0.10, 0.10, 0.10, 0.10, 0.05, 0.10, 0.10, 0.15]
+        "90/10 (Aggressive)": [0.24, 0.12, 0.12, 0.12, 0.12, 0.06, 0.12, 0.10]
     }
 elif baseline_option == "80/20": 
     reference_data = {
